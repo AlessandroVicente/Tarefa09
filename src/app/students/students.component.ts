@@ -1,3 +1,6 @@
+import { StudentService } from './../student.service';
+import { STUDENTS } from './../mock-students';
+import { Student } from './../student';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-   student = 'Windstorm';
+  students: Student[] = [];
+  selectedStudent!: Student;
 
-  constructor() { }
+  constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
+    this.getStudents();
   }
 
+  onSelect(student: Student): void {    
+    this.selectedStudent = student;
+  }
+
+  getStudents(): void {
+    this.students = this.studentService.getStudents();
+  }
+  
 }

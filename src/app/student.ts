@@ -1,8 +1,8 @@
 export interface Student {
-  Matricula: number;
-  Nome: string;
-  Notas: number;
-  Semestre: number;
-  Materia: string;
-  Faltas: number;
+  matricula: number;
+  nome: string;
+  notas: number;
+  semestre: number;
+  materia: string;
+  faltas: number;
 }
